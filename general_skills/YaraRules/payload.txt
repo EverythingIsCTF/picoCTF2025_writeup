@@ -1,0 +1,46 @@
+rule SuspiciousYaraRules0x100_Refined
+{
+    meta:
+        description = "Detects suspicious YaraRules0x100 sample or variants, avoiding false positives."
+        author      = "YourName"
+        date        = "2025-03-15"
+
+    strings:
+        // A large, unique text snippet from the ASCII banner
+        // The exact line is very unlikely to be in a benign file
+        $banner = "YaraRules0x100" ascii wide
+        
+        // Enough suspicious calls that we suspect this is malicious
+        $ntquery = "NtQueryInformationProcess" ascii wide
+        $dbgstop = "DebugActiveProcessStop"    ascii wide
+        $dbgact  = "DebugActiveProcess"        ascii wide
+        $isdbg   = "IsDebuggerPresent"         ascii wide
+        $opnptok = "OpenProcessToken"          ascii wide
+        $adjpriv = "AdjustTokenPrivileges"     ascii wide
+        $author = "Created by Nandan Desai"    ascii wide
+        
+        // Packer markers
+        $upx1 = "UPX0"
+        $upx2 = "UPX1"
+        $upx3 = "UPX!"
+
+    condition:
+        // Must be a Windows PE
+        (uint16(0) == 0x5A4D) and
+        (
+            // Option A: The file is strongly identified by the unique banner
+            // and at least 2 suspicious calls:
+            (
+                ( $banner or $author) and
+                ( #ntquery + #dbgstop + #dbgact + #isdbg + #opnptok + #adjpriv ) >= 2
+            )
+            or
+            // Option B: If the file is still UPX-packed, do an additional check.
+            // We also require some suspicious calls, so we don't match 
+            // random harmless UPX-packed apps.
+            (
+                ( $upx1 or $upx2 or $upx3 ) and 
+                ( #ntquery + #dbgstop + #dbgact + #isdbg + #opnptok + #adjpriv ) >= 1
+            )
+        )
+}
