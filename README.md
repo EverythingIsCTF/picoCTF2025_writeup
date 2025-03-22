@@ -25,3 +25,4 @@ Team profile: [EverythingIsCTF](https://play.picoctf.org/teams/14333) on picoCTF
 |-------------|------------|----------------------------------------------------------------|----------------------------------------------------------------------|
 | Perplexed   | medium     | -                                                              | [Solution](./reverse_engineering/perplexed[medium]/solution.md)       |
 | Chronohack  | medium     | [token_generator.py](./reverse_engineering/chronohack[medium]/token_generator.py) | [Solution](./reverse_engineering/chronohack[medium]/solution.md)        |
+| Quantum Scrambler | medium | [playground](./reverse_engineering/quantum[medium]/playground.py) | -
