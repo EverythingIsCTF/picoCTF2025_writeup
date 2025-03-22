@@ -1,15 +1,16 @@
 rule SuspiciousYaraRules0x100_Refined
 {
     meta:
-        description = "Detects suspicious YaraRules0x100 sample or variants, avoiding false positives."
-        author      = "YourName"
+        description = "Detects suspicious YaraRules0x100 sample."
+        author      = "Mostly ChatGPT, prompt written by Matseoi"
         date        = "2025-03-15"
 
     strings:
         // A large, unique text snippet from the ASCII banner
         // The exact line is very unlikely to be in a benign file
         $banner = "YaraRules0x100" ascii wide
-        
+        $author = "Nandan Desai"    ascii wide
+
         // Enough suspicious calls that we suspect this is malicious
         $ntquery = "NtQueryInformationProcess" ascii wide
         $dbgstop = "DebugActiveProcessStop"    ascii wide
@@ -17,12 +18,10 @@ rule SuspiciousYaraRules0x100_Refined
         $isdbg   = "IsDebuggerPresent"         ascii wide
         $opnptok = "OpenProcessToken"          ascii wide
         $adjpriv = "AdjustTokenPrivileges"     ascii wide
-        $author = "Created by Nandan Desai"    ascii wide
+        
         
         // Packer markers
-        $upx1 = "UPX0"
-        $upx2 = "UPX1"
-        $upx3 = "UPX!"
+        $upx = "UPX!"
 
     condition:
         // Must be a Windows PE
@@ -39,7 +38,7 @@ rule SuspiciousYaraRules0x100_Refined
             // We also require some suspicious calls, so we don't match 
             // random harmless UPX-packed apps.
             (
-                ( $upx1 or $upx2 or $upx3 ) and 
+                ( $upx ) and 
                 ( #ntquery + #dbgstop + #dbgact + #isdbg + #opnptok + #adjpriv ) >= 1
             )
         )
