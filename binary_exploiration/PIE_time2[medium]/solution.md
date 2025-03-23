@@ -63,7 +63,6 @@ int main() {
   setvbuf(stdout, NULL, _IONBF, 0); // _IONBF = Unbuffered
 
   call_functions();
-main_1441:
   return 0;
 }
 ```
