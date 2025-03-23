@@ -24,5 +24,5 @@ Team profile: [EverythingIsCTF](https://play.picoctf.org/teams/14333) on picoCTF
 | Challenge   | Difficulty | Script                                                          | Write-up MD                                                          |
 |-------------|------------|----------------------------------------------------------------|----------------------------------------------------------------------|
 | Perplexed   | medium     | [exploit.py](./reverse_engineering/perplexed[medium]/exploit.py)   | [Solution](./reverse_engineering/perplexed[medium]/solution.md)       |
-| Chronohack  | medium     | [token_generator.py](./reverse_engineering/chronohack[medium]/exploit.py) | [Solution](./reverse_engineering/chronohack[medium]/solution.md)        |
+| Chronohack  | medium     | [exploit.py](./reverse_engineering/chronohack[medium]/exploit.py)  | [Solution](./reverse_engineering/chronohack[medium]/solution.md)        |
 | Quantum Scrambler | medium | [playground](./reverse_engineering/quantum[medium]/playground.py) | -
