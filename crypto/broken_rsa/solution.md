@@ -19,17 +19,16 @@ e: 65537
 cyphertext: 15424440168528358995286123614851011350015209432001800630444797091190078867982876803870765184208807547755974974623583704791108443351513009891970935033143305
 ```
 
-The security of RSA depends on the difficulty of factoring  
-$$ N = p \cdot q $$  
+The security of RSA depends on the difficulty of factoring $ N = p \cdot q $
 into its two prime factors.
 
 Observing that N is even, we can infer that one of the primes is 2—a perfect match for the challenge title!
 
 $$
 \begin{aligned}
-p &= 2\\[5pt]
-q &= N/2\\[5pt]
-\phi_N &= (p-1)(q-1)\\[5pt]
+p &= 2\\
+q &= N/2\\
+\phi_N &= (p-1)(q-1)\\
        &= q - 1
 \end{aligned}
 $$
