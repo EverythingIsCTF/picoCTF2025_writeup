@@ -34,13 +34,9 @@ q &= N/2\\
 $$
 
 Given that \( e = 65537 \), we calculate the decryption key as:
-$$
-d = \text{inverse\_mod}(e, \phi_N)
-$$
+$d = \text{inverse\_mod}(e, \phi_N)$
 Then, the plaintext is recovered by computing:
-$$
-\text{plaintext} = \text{pow}(\text{ciphertext}, d, N)
-$$
+$\text{plaintext} = \text{pow}(\text{ciphertext}, d, N)$
 
 The sage code is [here](de_rsa.sage):
 
