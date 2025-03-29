@@ -7,6 +7,10 @@
 * [PIE Time (Easy)](binary_exploiration/PIE_time[esay]/solution.md)
 * [PIE Time 2 (Medium)](binary_exploiration/PIE_time2[medium]/solution.md)
 
+## Cryptography
+
+* [Broken RSA (Easy)](crypto/broken_rsa/solution.md)
+
 ## Web Exploitation
 
 * [SSTI Challenge 1 (Easy)](web/SSTI_Series/SSTI1.md)
