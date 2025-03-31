@@ -2,10 +2,10 @@
 
 ## Binary Exploitation
 
-* [Echo Valley (Medium)](binary_exploiration/Echo_valley[medium]/solution.md)
-* [Handoff (Hard)](binary_exploiration/Handoff[hard]/solution.md)
-* [PIE Time (Easy)](binary_exploiration/PIE_time[esay]/solution.md)
-* [PIE Time 2 (Medium)](binary_exploiration/PIE_time2[medium]/solution.md)
+* [Echo Valley (Medium)](binary_exploiration/Echo_valley-medium/solution.md)
+* [Handoff (Hard)](binary_exploiration/Handoff-hard/solution.md)
+* [PIE Time (Easy)](binary_exploiration/PIE_time-easy/solution.md)
+* [PIE Time 2 (Medium)](binary_exploiration/PIE_time2-medium/solution.md)
 
 ## Cryptography
 
@@ -18,9 +18,9 @@
 
 ## Reverse Engineering
 
-* [Perplexed (Medium)](reverse_engineering/perplexed[medium]/solution.md)
-* [Chronohack (Medium)](reverse_engineering/chronohack[medium]/solution.md)
-* [Quantum Scrambler (Medium)](reverse_engineering/quantum[medium]/solution.md)
+* [Perplexed (Medium)](reverse_engineering/perplexed-medium/solution.md)
+* [Chronohack (Medium)](reverse_engineering/chronohack-medium/solution.md)
+* [Quantum Scrambler (Medium)](reverse_engineering/quantum-medium/solution.md)
 
 ## General Skills
 
